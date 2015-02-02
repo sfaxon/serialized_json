@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  producer: MyString
+  vintage: 1
+  varietals: 
+  designation: MyString
+
+two:
+  producer: MyString
+  vintage: 1
+  varietals: 
+  designation: MyString

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Producer:</strong>
+  <%= @wine.producer %>
+</p>
+
+<p>
+  <strong>Vintage:</strong>
+  <%= @wine.vintage %>
+</p>
+
+<p>
+  <strong>Varietals:</strong>
+  <% @wine.varietals.each do |varietal| %>
+    <%= varietal.name %> (<%= varietal.percentage %>)<br />
+  <% end %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @wine.designation %>
+</p>
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>
