@@ -22,5 +22,8 @@ module SerializedJson
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # use structrue.sql because schema.rb does not show love for JSON storage
+    config.active_record.schema_format = :sql
   end
 end
