@@ -20,6 +20,7 @@
     <%= f.number_field :vintage %>
   </div>
   <div class="field">
+    <%= f.label :varietals %><br>
     <%= f.fields_for :varietals do |varietal_form| %>
       <%= render 'varietal_fields', f: varietal_form %>
     <% end %>
