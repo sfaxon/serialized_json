@@ -16,6 +16,12 @@ class Wine < ActiveRecord::Base
     write_attribute(:varietals, varietals)
   end
 
+  def build_varietal
+    v = self.varietals.dup
+    v << Varietal.new({name: '', percentage: 0})
+    self.varietals = v
+  end
+
   class Varietal
     attr_accessor :name, :percentage
 

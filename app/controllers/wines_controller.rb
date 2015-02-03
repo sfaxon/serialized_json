@@ -15,6 +15,7 @@ class WinesController < ApplicationController
   # GET /wines/new
   def new
     @wine = Wine.new
+    @wine.build_varietal
   end
 
   # GET /wines/1/edit
