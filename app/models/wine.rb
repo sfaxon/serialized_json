@@ -1,5 +1,7 @@
 class Wine < ActiveRecord::Base
 
+  validate :varietals_percentage
+
   def varietals
     read_attribute(:varietals).map {|v| Varietal.new(v) }
   end
@@ -35,5 +37,12 @@ class Wine < ActiveRecord::Base
     def new_record?() false; end
     def marked_for_destruction?() false; end
     def _destroy() false; end
+  end
+
+private
+  def varietals_percentage
+    if self.varietals.map(&:percentage).inject(:+) > 100
+      self.errors.add(:varetals, "sum cannot be greater than 100")
+    end
   end
 end
