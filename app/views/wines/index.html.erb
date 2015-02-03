@@ -18,7 +18,11 @@
       <tr>
         <td><%= wine.producer %></td>
         <td><%= wine.vintage %></td>
-        <td><%= wine.varietals %></td>
+        <td>
+          <% wine.varietals.each do |varietal| %>
+            <%= varietal.name %> (<%= varietal.percentage %>)<br />
+          <% end %>
+        </td>
         <td><%= wine.designation %></td>
         <td><%= link_to 'Show', wine %></td>
         <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
