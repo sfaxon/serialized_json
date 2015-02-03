@@ -20,8 +20,9 @@ class Wine < ActiveRecord::Base
     attr_accessor :name, :percentage
 
     def initialize(hash)
-      @name          = hash['name']
-      @percentage    = hash['percentage'].to_i
+      hash = hash.symbolize_keys
+      @name          = hash[:name]
+      @percentage    = hash[:percentage].to_i
     end
 
     def persisted?() false; end
